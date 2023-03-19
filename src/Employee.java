@@ -1,11 +1,11 @@
 public class Employee {
     private static long idCounter = 0;
-    private long id;
+    private final long id;
     private String fullName;
     private int department;
     private double salary;
 
-    private Employee() {
+    public Employee() {
         this.id = idCounter++;
     }
 
@@ -14,6 +14,10 @@ public class Employee {
         this.department = department;
         this.salary = salary;
         this.id = idCounter++;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getFullName() {
@@ -33,5 +37,10 @@ public class Employee {
     }
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return fullName + ", ID - " + id + ", department - " + department + ", salary - " + salary;
     }
 }
