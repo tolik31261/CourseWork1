@@ -22,7 +22,9 @@ public class Main {
         System.out.println("Сотрудник с максимальной зп - " + getEmployeeMaxSalary());
 
         Employee employeeMinSalary = getEmployeeMinSalary();
-        System.out.println("Сотрудник с минимальной зп - "+ getEmployeeMinSalary());
+        System.out.println("Сотрудник с минимальной зп - " + getEmployeeMinSalary());
+
+        System.out.println("Cредняя зп составляет - " + getAverageSalary());
 
     }
 
@@ -32,7 +34,7 @@ public class Main {
         }
     }
 
-    private static double getSumSalary(){
+    private static double getSumSalary() {
         double sum = 0;
         for (Employee employee : employees) {
             sum += employee.getSalary();
@@ -64,8 +66,11 @@ public class Main {
         return minEmployee;
     }
 
-
-
-
-
+    private static double getAverageSalary() {
+        double average = 0;
+        for (Employee employee : employees) {
+            average += employee.getSalary() / employees.length;
+        }
+        return average;
+    }
 }
