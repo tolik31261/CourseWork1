@@ -16,7 +16,7 @@ public class Main {
         employees[9] = new Employee("Дымов Юрий Юрьевич", 2, 80_000);
 
         printAll();
-        System.out.println(getSumSalary());
+        System.out.println("Сумма затрат на зп в месяц " + getSumSalary());
     }
 
     private static void printAll() {
