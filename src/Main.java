@@ -13,10 +13,17 @@ public class Main {
         employees[6] = new Employee("Суриков Иван Иванович", 2, 56_000);
         employees[7] = new Employee("Шерементьев Руслан Николаевич", 4, 20_000);
         employees[8] = new Employee("Гунько Илья Валерьевич", 5, 40_000);
-        employees[9] = new Employee("Дымов Юрий Юрьевич", 2, 80_000);
+        employees[9] = new Employee("Дымов Юрий Юрьевич", 2, 11_000);
 
         printAll();
         System.out.println("Сумма затрат на зп в месяц " + getSumSalary());
+
+        Employee employeeMaxSalary = getEmployeeMaxSalary();
+        System.out.println("Сотрудник с максимальной зп - " + getEmployeeMaxSalary());
+
+        Employee employeeMinSalary = getEmployeeMinSalary();
+        System.out.println("Сотрудник с минимальной зп - "+ getEmployeeMinSalary());
+
     }
 
     private static void printAll() {
@@ -32,5 +39,33 @@ public class Main {
         }
         return sum;
     }
+
+    private static Employee getEmployeeMaxSalary() {
+        Employee maxEmployee = null;
+        double maxSalary = Double.MIN_VALUE;
+        for (Employee employee : employees) {
+            if (maxSalary < employee.getSalary()) {
+                maxSalary = employee.getSalary();
+                maxEmployee = employee;
+            }
+        }
+        return maxEmployee;
+    }
+
+    private static Employee getEmployeeMinSalary() {
+        Employee minEmployee = null;
+        double minSalary = Double.MAX_VALUE;
+        for (Employee employee : employees) {
+            if (minSalary > employee.getSalary()) {
+                minSalary = employee.getSalary();
+                minEmployee = employee;
+            }
+        }
+        return minEmployee;
+    }
+
+
+
+
 
 }
