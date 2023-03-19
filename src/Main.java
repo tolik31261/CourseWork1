@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
         employees[0] = new Employee("Назаров Анатолий Сергеевич", 1, 100_000);
         employees[1] = new Employee("Ахметшина Анжела Александровна", 2, 98_000);
@@ -15,11 +16,21 @@ public class Main {
         employees[9] = new Employee("Дымов Юрий Юрьевич", 2, 80_000);
 
         printAll();
+        System.out.println(getSumSalary());
     }
 
-        private static void printAll() {
-            for (Employee employee : employees) {
-                System.out.println(employee);
-            }
+    private static void printAll() {
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
     }
+
+    private static double getSumSalary(){
+        double sum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getSalary();
+        }
+        return sum;
+    }
+
+}
