@@ -26,6 +26,8 @@ public class Main {
 
         System.out.println("Cредняя зп составляет - " + getAverageSalary());
 
+        printAllFullName();
+
     }
 
     private static void printAll() {
@@ -72,5 +74,11 @@ public class Main {
             average += employee.getSalary() / employees.length;
         }
         return average;
+    }
+
+    public static void printAllFullName() {
+        for (Employee employee : employees) {
+            System.out.println(employee.getFullName());
+        }
     }
 }
